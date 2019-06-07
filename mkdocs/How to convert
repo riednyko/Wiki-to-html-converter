@@ -14,7 +14,7 @@ CONVERSION:
 
 1)Clone wiki repo using this commad: git clone https://github.com/dbeaver/dbeaver.wiki.git
 
-2)Move all the contents of your wiki repo to a mkdocs/docs
+2)Create the "docs" folder in the mkdocs directory and move all the contents of your wiki repo to a mkdocs/docs
 
 3)Build the documentation:
 
