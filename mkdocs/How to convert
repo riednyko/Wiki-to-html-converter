@@ -1,0 +1,25 @@
+TO START THE CONVERTATION:
+
+1)In order to manually install MkDocs you'll need Python (https://www.python.org/downloads/) installed on your system, as well as the Python package manager, pip.
+
+2)If you're using a recent version of Python, the Python package manager, pip, is most likely installed by default. However, you may need to upgrade pip to the lasted version:
+
+	pip install --upgrade pip
+
+3)Install the mkdocs package using pip:
+
+	pip install mkdocs
+
+CONVERSION:
+
+1)Clone wiki repo using this commad: git clone https://github.com/dbeaver/dbeaver.wiki.git
+
+2)Move all the contents of your wiki repo to a mkdocs/docs
+
+3)Build the documentation:
+
+	mkdocs build
+
+4)This will create a new directory, named site
+
+5)Open any html file in this directory to view the result
