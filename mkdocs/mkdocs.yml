@@ -1,3 +1,41 @@
 site_name: Dbeaver
 
+nav:
+- Installation: 'Installation.md'
+- Application Window Overview: 'Application-Window-Overview.md'
+- Views: 'Views.md'
+- Views:
+    - 'Database Navigator': 'Database-Navigator.md'
+    - 'Projects View': 'Projects-View.md'
+    - 'Project Explorer': 'Project-Explorer.md'
+    - 'Query Manager': 'Query-Manager.md'
+    - 'Background Tasks': 'Background-Tasks.md'
+- Database Object Editor:
+    - 'Properties Editor': 'Properties-Editor.md'
+    - 'Data Editor':
+      - 'Navigation': 'Navigation.md'
+      - 'Data View and Format': 'Data-View-and-Format.md'
+      - 'Data Filters': 'DataFilters.md'
+      - 'Data Refresh': 'Data-Refresh.md'
+      - 'Data Viewing and Editing': 'Data-Viewing-and-Editing.md'
+      - 'Panels': 'Panels.md'
+      - 'Managing Charts': 'Managing-Charts.md'
+      - 'Data Search': 'Data-Search.md'
+      - 'SQL Generation': 'SQL-Generation.md'
+      - 'Working with XML and JSON': 'Working-with-XML-and-JSON.md'
+      - 'Managing Data Formats': 'Managing-Data-Formats.md'
+    - 'ER Diagrams':
+      - 'Database Structure Diagrams': 'Database-Structure-Diagrams.md'
+      - 'Custom Diagrams': 'Custom-Diagrams.md'
+- SQL Editor:
+    - 'SQL Templates': 'SQL-Templates.md'
+    - 'SQL Assist and Auto-Complete': 'SQL-Assist-and-Auto-Complete.md'
+    - 'SQL Formatting': 'SQL-Formatting.md'
+    - 'SQL Execution': 'SQL-Execution.md'
+    - 'Visual Query Builder': 'Visual-Query-Builder.md'
+    - 'Script Management': 'Script Management.md'
+    - 'Debug': 'Debug.md'
+      
+
+
 theme: readthedocs
