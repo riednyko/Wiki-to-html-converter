@@ -1,6 +1,5 @@
 i#!/bin/bash
 
-mkdir snapcraft/snap
 cp snapcraft.yaml ./snapcraft/snap/
 cd ./snapcraft/
 snapcraft clean dbeaver-ce --step pull
