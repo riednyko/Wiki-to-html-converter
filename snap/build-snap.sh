@@ -1,7 +1,7 @@
 i#!/bin/bash
 
-mkdir ./mysnaps/snap
-cp ../snapcraft.yaml mysnaps/snap/
+mkdir mysnaps/snap
+cp snapcraft.yaml ./mysnaps/snap/
 cd ~/mysnaps/jenkins
 snapcraft clean dbeaver-ce --step pull
 snapcraft cleanbuild
