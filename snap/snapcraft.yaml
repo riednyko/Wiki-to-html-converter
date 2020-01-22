@@ -1,4 +1,4 @@
-name: dbeaver-ce
+name: dbeaverapp
 version: latest
 summary: Universal Database Tool
 description: |
@@ -12,7 +12,7 @@ architectures:
   - build-on: amd64
 
 apps:
-  dbeaver-ce:
+  dbeaverapp:
     command: desktop-launch $SNAP/usr/share/dbeaver/dbeaver
     desktop: usr/share/applications/dbeaver.desktop
     environment:
@@ -28,7 +28,7 @@ apps:
       - desktop-legacy
 
 parts:
-  dbeaver-ce:
+  dbeaverapp:
     source: https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
     plugin: dump
     build-packages:
