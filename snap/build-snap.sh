@@ -2,7 +2,7 @@ i#!/bin/bash
 
 cp snapcraft.yaml ./snapcraft/snap/
 cd ./snapcraft/
-snapcraft clean dbeaver-ce --step pull
+snapcraft clean dbeaverapp --step pull
 snapcraft cleanbuild
 pwd
 snapcraft login --with ../snapcraft.login
