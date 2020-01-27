@@ -1,4 +1,7 @@
-node('snap-test') 
+node('snap-test') arameters {
+        booleanParam(defaultValue: false, description: 'Mac job should be triggered', name: 'buildSnap')
+        booleanParam(defaultValue: false, description: 'Artifacts should be packaged', name: 'packaging')
+    }
 //cp snapcraft.yaml ./snapcraft/snap/
 //cd ./snapcraft/
 snapcraft clean dbeaverapp --step pull
