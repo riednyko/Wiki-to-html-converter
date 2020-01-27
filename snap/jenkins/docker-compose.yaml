@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  jenkins:
+    container_name: jenkins-dev
+    image: rmuhamedgaliev/jenkins:lts
+    restart: always
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  jenkins_home:
