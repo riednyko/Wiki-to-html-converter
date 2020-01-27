@@ -1,5 +1,5 @@
 node('snap-test') 
-cp snapcraft.yaml ./snapcraft/snap/
+#cp snapcraft.yaml ./snapcraft/snap/
 cd ./snapcraft/
 snapcraft clean dbeaverapp --step pull
 snapcraft cleanbuild
