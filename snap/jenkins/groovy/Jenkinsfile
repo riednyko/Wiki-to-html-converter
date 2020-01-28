@@ -1,5 +1,7 @@
 node('snap-test') {
 snapcraft init
+pwd
+dir
 cp ../../../snapcraft.yaml ..snapcraft/snap/
 cd ../snapcraft/
 snapcraft clean dbeaverapp --step pull
