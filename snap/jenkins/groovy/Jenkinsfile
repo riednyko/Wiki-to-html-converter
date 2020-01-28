@@ -1,13 +1,49 @@
 node ('snap-test') {
-     snapcraft init
-     pwd
-     dir
-//cp ../../../snapcraft.yaml ..snapcraft/snap/
-//cd ../snapcraft/
-//snapcraft clean dbeaverapp --step pull
-//snapcraft cleanbuild
-//snapcraft login --with ../snapcraft.login
-//#OUTPUT="$(ls -Art | tail -n 1)"
-//snapcraft push "dbeaverapp_latest_OrderedDict([('build-on', 'amd64')]).snap" --release=edge
+    parameters {
+        booleanParam(defaultValue: false, description: 'Mac job should be triggered', name: 'buildMac')
+        booleanParam(defaultValue: false, description: 'Artifacts should be packaged', name: 'packaging')
+    }
+    stage('dbeaver checkout all repositories') {
+        dir('dbeaver-ce') {
+            git (
+                url: 'https://github.com/dbeaver/dbeaver',
+                branch: 'devel'
+            )
+        }
+        dir('dbeaver-packaging') {
+            git (
+                url: 'git@github.com:rider-soft/dbeaver-packaging',
+                credentialsId: '2df51477-c2a2-45b9-bf22-5950e01f00b2',
+                branch: 'devel'
+            )
+        }
+    }
+    stage('Clean .m2') {
+        sh "rm -rf /home/jenkins/.m2/repository/com/dbeaver /home/jenkins/.m2/repository/org/jkiss"
+    }
+    stage('Build dbeaver-ce') {
+        dir("dbeaver-ce") {
+            sh "mvn clean install"
+        }
+    }
+    stage('Package dbeaver-ce') {
+        if ( params.packaging == true ) {
+            dir("dbeaver-packaging") {
+                writeFile file: 'product/local.properties', text: 'buildDirectory=build\njreVersion=jre8_u77\nbabel.locales=ru,zh,de,fr,es,ja\nbabel.repo.dir=/home/jenkins/babel/oxygen\ndistDir=../../dist/dbeaver-ce\nnsisDirectory=/opt/jenkins/tests/nsis-3.01/bin\n'
+                sh "cd product && ant build-product -Dproduct.root.dir=${workspace}/dbeaver-ce"
+            }
+        }
+    }
+    stage('Publish junit reports') {
+         junit '**/target/surefire-reports/*.xml'
+    }
+    stage('Collecting Artefacts') {
+        if ( params.packaging == true ) {
+            archiveArtifacts artifacts: 'dist/dbeaver-ce/*'
+        }
+    }
+    if ( params.buildMac == true ) {
+        build 'Mac_Jobs/dbeaver-ce'
+    }
 }
 
