@@ -1,4 +1,4 @@
-agent { node { label 'snap-test' } } {
+node { label 'snap-test' } {
 snapcraft init
 pwd
 dir
