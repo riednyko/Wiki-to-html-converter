@@ -2,8 +2,8 @@ node('snap-test') {
 snapcraft init
 pwd
 dir
-cp ../../../snapcraft.yaml ..snapcraft/snap/
-cd ../snapcraft/
+//cp ../../../snapcraft.yaml ..snapcraft/snap/
+//cd ../snapcraft/
 snapcraft clean dbeaverapp --step pull
 snapcraft cleanbuild
 snapcraft login --with ../snapcraft.login
