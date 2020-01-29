@@ -15,4 +15,4 @@ node ('snap-test') {
         build 'Mac_Jobs/dbeaver-ce'
     }
 }
-
+}
