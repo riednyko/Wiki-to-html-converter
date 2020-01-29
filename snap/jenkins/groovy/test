@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh "snapcraft version"
+                sh "mkdir -p ./snap/snapcraft/snap"
+                sh "cp ./snap/snapcraft.yaml ./snap/snapcraft/snap/"
             }
         }
     }
