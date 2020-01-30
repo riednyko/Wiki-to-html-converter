@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh "mkdir -p ./snap/snapcraft/snap"
                 sh "cp ./snap/snapcraft.yaml ./snap/snapcraft/snap/"
-                sh "snapcraft"
+                sh "snapcraft cleanbuild"
             }
         }
     }
