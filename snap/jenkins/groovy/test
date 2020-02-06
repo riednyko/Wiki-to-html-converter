@@ -4,8 +4,8 @@ pipeline {
         stage('build') {
             steps {
                 sh "mkdir -p ./snap/snapcraft/snap"
-                sh "cp ./snap/snapcraft.yaml ./snap/snapcraft/snap/"
-                sh "cd ./snap/snapcraft && snapcraft cleanbuild"
+                //sh "cp ./snap/snapcraft.yaml ./snap/snapcraft/snap/"
+                //sh "cd ./snap/snapcraft && snapcraft cleanbuild"
                 sh "pwd"
                 //sh "snapcraft cleanbuild"
             }
