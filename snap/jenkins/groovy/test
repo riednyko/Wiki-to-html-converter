@@ -3,11 +3,17 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh "mkdir -p ./snap/snapcraft/snap"
+                //sh "mkdir -p ./snap/snapcraft/snap"
                 //sh "cp ./snap/snapcraft.yaml ./snap/snapcraft/snap/"
                 //sh "cd ./snap/snapcraft && snapcraft cleanbuild"
-                sh "pwd"
+                //sh "pwd"
                 //sh "snapcraft cleanbuild"
+                script {
+                test = input message: 'User input required', ok: 'Release!',
+                        parameters: [choice(name: 'test', choices: 'green\nyellow', 
+                                     description: '')]
+            }
+            echo "${test}"
             }
         }
     }
