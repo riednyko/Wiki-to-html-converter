@@ -9,7 +9,8 @@ pipeline {
                 //sh "pwd"
                 //sh "snapcraft cleanbuild"
                 script {
-                parameters: [choice(name: 'test', choices: 'green\nyellow', 
+                test = input message: '',
+                        parameters: [choice(name: 'test', choices: 'green\nyellow', 
                                      description: '')]
             }
             echo "${test}"
