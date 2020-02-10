@@ -8,10 +8,8 @@ pipeline {
                 //sh "cd ./snap/snapcraft && snapcraft cleanbuild"
                 //sh "pwd"
                 //sh "snapcraft cleanbuild"
-                script {
-                test = input message: '',
-                        parameters: [choice(name: 'test', choices: 'green\nyellow', 
-                                     description: '')]
+                parameters {
+                choice(name: 'test', choices: ['green', 'yellow',], description: '')]
             }
             echo "${test}"
             }
