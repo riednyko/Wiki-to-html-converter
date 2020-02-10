@@ -1,18 +1,18 @@
 pipeline {
     agent any
-    stages {
-        stage('build') {
-            steps {
+    //stages {
+        //stage('build') {
+           // steps {
                 //sh "mkdir -p ./snap/snapcraft/snap"
                 //sh "cp ./snap/snapcraft.yaml ./snap/snapcraft/snap/"
                 //sh "cd ./snap/snapcraft && snapcraft cleanbuild"
                 //sh "pwd"
                 //sh "snapcraft cleanbuild"
                 parameters {
-                choice(name: 'test', choices: ['green', 'yellow',], description: '')
+                choice(name: 'test', choices: "green\nyellow', description: '')
             }
             echo "${test}"
-            }
-        }
-    }
+            //}
+        //}
+    //}
 }
