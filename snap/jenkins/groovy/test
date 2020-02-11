@@ -6,7 +6,7 @@ pipeline {
       stages {
         stage('build') {
           steps {
-            sh "sudo scp -i ./rsa_key -r ./file.txt jenkins@${test}.web.dbeaver.net:/home/jenkins/"
+            sh "scp -i ./rsa_key -r ./file.txt jenkins@${test}.web.dbeaver.net:/home/jenkins/"
             }
         }
     }
