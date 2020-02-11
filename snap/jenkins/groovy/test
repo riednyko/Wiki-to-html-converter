@@ -1,12 +1,12 @@
 pipeline {
     agent any
     parameters {
-      choice(name: 'test', choices: "green\nyellow", description: 'zzz' )
+      choice(name: 'test', choices: "stage\nprod", description: '' )
     }
       stages {
         stage('build') {
           steps {
-            echo "${test}"
+            sh "scp -i ./rsa_key -r ./file.txt jenkins@${test}.web.dbeaver.net:/home/jenkins/"
             }
         }
     }
