@@ -6,7 +6,7 @@ pipeline {
       stages {
         stage('build') {
           steps {
-            sh "chmod -x ./rsa_key.pem && scp -i ./rsa_key.pem -r ./file.txt jenkins@${test}.web.dbeaver.net:/home/jenkins/"
+            sh "scp -i ./rsa_key.pem -r ./file.txt jenkins@${test}.web.dbeaver.net:/home/jenkins/"
             }
         }
     }
